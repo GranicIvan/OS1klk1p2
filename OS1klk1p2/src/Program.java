@@ -19,7 +19,7 @@ import java.util.LinkedList;
  * 
  * Sinhronizovati klasu Kamp tako da se ni u kom slucaju ne izgube pecurke ili
  * drva. Takodje, dodati da izvidjaci po povratku u kamp, pre nego sto zavrse
- * rad, sacekaju da se vrate u kamp i svi ostali izvidjaci. (10 poena) 				//kako ovo? 
+ * rad, sacekaju da se vrate u kamp i svi ostali izvidjaci. (10 poena) 
  * 
  * Obratiti paznju na elegantnost i objektnu orijentisanost realizacije i stil
  * resenja. Za program koji se ne kompajlira, automatski se dobija 0 poena bez
