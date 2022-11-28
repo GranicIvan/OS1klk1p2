@@ -17,6 +17,13 @@ public class IzvidjacR implements Runnable {
 		}
 
 		kamp.donesiDrva(sakupljenaDrva);
+		
+		try {
+			kamp.cekajOstale();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}//run
 
 }

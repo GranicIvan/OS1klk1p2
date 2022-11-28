@@ -34,7 +34,7 @@ public class Program {
 		Kamp kamp = new Kamp();
 		
 		LinkedList<IzvidjacT> izvidjaciPecurke = new LinkedList<IzvidjacT>();
-		LinkedList<IzvidjacR> izvidjaciDrva = new LinkedList<IzvidjacR>();
+		LinkedList<Thread> izvidjaciDrva = new LinkedList<Thread>();
 		
 		
 		//Pravimo izvidjace i dodajemo ih u listu
@@ -46,15 +46,17 @@ public class Program {
 		}
 		
 		for(int i = 0; i < 12 ; i++) {
-			IzvidjacR novi = new IzvidjacR(suma, kamp);
-			izvidjaciDrva.add( novi );	
-			izvidjaciDrva.get(i).run();
+			Thread novi = new  Thread(new IzvidjacR(suma, kamp));
+			novi.setName("drvoseca " + i );
+			novi.start();			
+			izvidjaciDrva.add( novi );				
 		}
 		
 		//ovako cekamo da se svi zavrse
 		for(int i = 0; i < 12 ; i++) {
 			try {
-				izvidjaciPecurke.get(i).join();				
+				izvidjaciPecurke.get(i).join();	
+				izvidjaciDrva.get(i).join();
 			} catch (InterruptedException e) {				
 				e.printStackTrace();
 			}

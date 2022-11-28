@@ -21,6 +21,12 @@ public class IzvidjacT extends Thread {
 		if(!interrupted()){
 			kamp.donesiPecurke(nadjenjePecurke);			
 		}
+		
+		try {
+			kamp.cekajOstale();
+		} catch (InterruptedException e) {			
+			e.printStackTrace();
+		}
 	}//run
 	
 }

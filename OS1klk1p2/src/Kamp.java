@@ -2,6 +2,7 @@ class Kamp {
 
 	private int pecurke = 0;
 	private int drva = 0;
+	private int gotovi = 0; // broj izvidjaca koji su zavrsili
 
 	synchronized public void donesiPecurke(int koliko) {
 		pecurke += koliko;
@@ -23,5 +24,16 @@ class Kamp {
 				poruka,
 				pecurke,				
 				drva);
-	}
+	}//stampajPoruku
+		
+	
+	synchronized public void cekajOstale() throws InterruptedException {
+		gotovi++;
+		notifyAll();
+		
+		while(gotovi != 24) {
+			wait();
+		}
+			
+	}//cekajOstale
 }
