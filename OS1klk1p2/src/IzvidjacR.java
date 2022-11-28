@@ -20,8 +20,7 @@ public class IzvidjacR implements Runnable {
 		
 		try {
 			kamp.cekajOstale();
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
+		} catch (InterruptedException e) {			
 			e.printStackTrace();
 		}
 	}//run
